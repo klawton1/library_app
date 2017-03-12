@@ -6,6 +6,10 @@ class UsersController < ApplicationController
   def show
     user_id = params[:id]
     @user = User.find(user_id)
+    if @user != current_user
+      flash[:error] = "Not Your Page!"
+      redirect_to users_path
+    end
   end
 
   def new
@@ -14,6 +18,9 @@ class UsersController < ApplicationController
 
   def create
     @user = User.create(user_params)
+    if !@user.errors.messages.empty?
+      flash[:error] = "Email is already Taken"
+    end
     login(@user)
     redirect_to @user
   end
