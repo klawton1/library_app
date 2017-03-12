@@ -3,6 +3,8 @@ Rails.application.routes.draw do
 
   resources :users, only: [:index, :new, :show, :create]
 
+  resources :libraries, only: [:index, :new, :show]
+
   get "/login" => "sessions#new"
   post "/sessions" => "sessions#create"
   get "/logout" => "sessions#destroy"

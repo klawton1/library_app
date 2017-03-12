@@ -19,7 +19,7 @@ class UsersController < ApplicationController
   def create
     @user = User.create(user_params)
     if !@user.errors.messages.empty?
-      flash[:error] = "Email is already Taken"
+      flash[:error] = @user.errors.full_messages.join(", ")
     end
     login(@user)
     redirect_to @user
