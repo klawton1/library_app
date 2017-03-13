@@ -6,9 +6,9 @@ Rails.application.routes.draw do
   post "/libraries/:library_id/users", to: "library_users#create", as: "new_user_library" 
 
   resources :libraries, only: [:index, :new, :show]
-
-  get "/login" => "sessions#new"
-  get "/logout" => "sessions#destroy"
-  post "/sessions" => "sessions#create"
+  post "/libraries", to: "libraries#create"
+  get "/login", to: "sessions#new"
+  get "/logout", to: "sessions#destroy"
+  post "/sessions", to: "sessions#create"
 
 end

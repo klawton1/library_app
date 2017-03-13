@@ -1,6 +1,4 @@
 <h1>Awesome Page</h1>
-<p><%= @users.length%></p>
-<% @users.each do |user|%>
-  <h4><%= link_to "#{user.first_name}", user_path(user)%></h4>
-<% end %>
+<p><%= @users.length%> Current Users!</p>
+<h3><%= link_to "Search Libraries", libraries_path%></h3>
 

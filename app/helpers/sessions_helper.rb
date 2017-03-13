@@ -13,7 +13,7 @@ module SessionsHelper
     session[:user_id] = nil
   end
 
-  def logged_in? user
-    return session[:user_id]  == user.id
+  def logged_in?
+    return !!current_user
   end
 end
