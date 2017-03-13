@@ -1,3 +1,4 @@
 class Library < ApplicationRecord
-  has_and_belongs_to_many :users
+  has_many :library_users, dependent: :destroy
+  has_many :users, through: :library_users
 end

@@ -1,7 +1,7 @@
 class User < ApplicationRecord
   has_secure_password
-
-  has_and_belongs_to_many :libraries
+  has_many :library_users, dependent: :destroy
+  has_many :libraries, through: :library_users
 
   validates :email, :password, :first_name, :last_name, presence: true
   validates :email, uniqueness: true

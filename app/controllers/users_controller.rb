@@ -8,7 +8,7 @@ class UsersController < ApplicationController
     @user = User.find(user_id)
     if @user != current_user
       flash[:error] = "Not Your Page!"
-      redirect_to users_path
+      redirect_to root_path
     end
   end
 

@@ -1,0 +1,8 @@
+<% @libs.each do |lib| %>
+  <div>
+    <h3><%= lib.name %></h3>
+    <%= link_to "Our Site", library_path(lib)%>
+    <%= button_to "Become a Member", new_user_library_path(lib)%> 
+  </div>
+  <hr>
+<% end %>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170312044638) do
+ActiveRecord::Schema.define(version: 20170313043245) do
 
   create_table "libraries", force: :cascade do |t|
     t.string   "name"
@@ -21,8 +21,8 @@ ActiveRecord::Schema.define(version: 20170312044638) do
   end
 
   create_table "library_users", force: :cascade do |t|
-    t.integer  "user_id"
     t.integer  "library_id"
+    t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["library_id"], name: "index_library_users_on_library_id"

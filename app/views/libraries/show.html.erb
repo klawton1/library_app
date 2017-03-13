@@ -1,0 +1,6 @@
+<h2><%= @lib.name%></h2>
+<% @users.each do |user| %>
+  <h4> <%= user.first_name%> </h4>
+<%end%>
+
+<%= link_to "back", libraries_path%>
